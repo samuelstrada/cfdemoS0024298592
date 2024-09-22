@@ -1,0 +1,42 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    controllerName="com.xtendhr.web.controller.Details">
+    <Page id="pagina" title="DetailsView">
+        <Button id="botonBackMain" icon="sap-icon://nav-back" press="onBackMain"/>
+
+        <Table
+				id="myTableDetails"
+				items="{
+        		path: 'odata>/d/results'}"
+				>
+				<columns>
+					<Column>
+						<Text text="Externalcode" />
+					</Column>
+					<Column>
+						<Text text="ShirtSize" />
+					</Column>
+					<Column>
+						<Text text="ShirtColor" />
+					</Column>
+				</columns>
+
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text text="{odata>externalCode}" />
+							<!-- <Text text="{odata>cust_ShirtSize}" />
+							<Text text="{odata>cust_ShirtColor}" /> -->
+							<Input value="{odata>cust_ShirtSize}" />
+                			<Input value="{odata>cust_ShirtColor}" />
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+
+		<Button id="botonEdit" text="Edit Record" icon="sap-icon://edit" press="onEditPrepareData"/>
+		<Button id="botonDelete" text="Delete Record" icon="sap-icon://delete" press="_onDelete"/>
+
+    </Page>
+</mvc:View>

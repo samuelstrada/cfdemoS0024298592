@@ -1,0 +1,42 @@
+<mvc:View controllerName="com.xtendhr.web.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" xmlns:t="sap.ui.table" displayBlock="true" xmlns:f="sap.ui.layout.form"
+    xmlns="sap.m">
+    <Page id="page" title="Table of content">
+        <content>
+            
+			<Table
+				id="myTable"
+				items="{
+        		path: 'odata>/d/results'}"
+				>
+				<columns>
+					<Column>
+						<Text text="Externalcode" />
+					</Column>
+					<Column>
+						<Text text="ShirtSize" />
+					</Column>
+					<Column>
+						<Text text="ShirtColor" />
+					</Column>
+					<Column>
+						<Text text="Accion" />
+					</Column>
+				</columns>
+
+				<items>
+					<ColumnListItem>
+						<cells>
+							<Text text="{odata>externalCode}" />
+							<Text text="{odata>cust_ShirtSize}" />
+							<Text text="{odata>cust_ShirtColor}" />
+							<Button id="boton" icon="sap-icon://detail-view" press="onOpenNewView"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+			<Button id="botonAdd" text="Add Record" icon="sap-icon://add" press="onOpenNewViewNewRecord"/>
+        </content>
+        
+    </Page>
+</mvc:View>
