@@ -17,6 +17,11 @@
                 
                 <Label text="ShirtColor"/>
                 <Input id="inputcolor" placeholder="" />
+
+                <Label text="Employee"/>
+                <Input id="inputemployee" placeholder="" />
+
+                
                 
                 
                 <Button text="Save" icon="sap-icon://save" press="onSave"/>

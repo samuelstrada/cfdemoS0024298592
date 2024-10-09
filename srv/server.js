@@ -7,7 +7,7 @@ const httpClient = require('@sap-cloud-sdk/http-client');
 const { retrieveJwt } = require('@sap-cloud-sdk/connectivity');
 
 const JWTStrategy = require("@sap/xssec").JWTStrategy;
-const services = xsenv.getServices({uaa:"cfdemoS0024298592-xsuaa"}, { dest: { label: 'destination' } });
+const services = xsenv.getServices({uaa:"cfdemo85592-xsuaa"}, { dest: { label: 'destination' } });
 
 const app = express();
 app.use(express.json());
@@ -24,7 +24,7 @@ app.get("/", function (req, res, next){
 app.get("/user", function (req, res, next){
     res.send("I am " + req.user.id);
 });
-// /srv/destination?destinationX=CfDemo
+// /srv/destination?destinationX=cfdemo85592
 // /srv/destinations?destinationX=sfdemo&path=cust_CompanyShirts_S0024298592
 app.get('/destination', async function (req, res){
     try{

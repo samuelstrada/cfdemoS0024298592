@@ -20,6 +20,9 @@
 						<Text text="ShirtColor" />
 					</Column>
 					<Column>
+						<Text text="Employee" />
+					</Column>
+					<Column>
 						<Text text="Accion" />
 					</Column>
 				</columns>
@@ -30,6 +33,7 @@
 							<Text text="{odata>externalCode}" />
 							<Text text="{odata>cust_ShirtSize}" />
 							<Text text="{odata>cust_ShirtColor}" />
+							<Text text="{odata>cust_Employee}" />
 							<Button id="boton" icon="sap-icon://detail-view" press="onOpenNewView"/>
 						</cells>
 					</ColumnListItem>
@@ -37,6 +41,6 @@
 			</Table>
 			<Button id="botonAdd" text="Add Record" icon="sap-icon://add" press="onOpenNewViewNewRecord"/>
         </content>
-        
+
     </Page>
 </mvc:View>

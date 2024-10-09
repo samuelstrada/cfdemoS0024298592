@@ -18,7 +18,7 @@ sap.ui.define([
             this.externalCodeIdGlobal= valorUrl;
             
             console.log("Externalcode", valorUrl);
-            var path = "/srv/destination?destinationX=CfDemo&path=cust_CompanyShirts_S0024298592?$filter= externalCode eq '" + valorUrl + "'&$format=json";
+            var path = "/srv/destination?destinationX=sfodatatech&path=/odata/v2/cust_CompanyShirts_S0024298592?$filter= externalCode eq '" + valorUrl + "'&$format=json";
             
             $.ajax({
                 url: path,
@@ -38,7 +38,7 @@ sap.ui.define([
         _onDelete:function(oEvent){
             var self = this;
             var valorid = this.externalCodeIdGlobal;
-            var path = "/srv/destinationdelete?destinationX=CfDemo&path=cust_CompanyShirts_S0024298592('" + valorid + "')";
+            var path = "/srv/destinationdelete?destinationX=sfodataapi&path=/odata/v2/cust_CompanyShirts_S0024298592('" + valorid + "')";
             console.log(path);
             $.ajax({
                 url: path,
@@ -62,9 +62,9 @@ sap.ui.define([
                 if (index === aItems.length - 1) {
                     var updatedData = {
                         // "externalCode": valorid,
-                        
+                        "cust_Employee": oCells[3].getValue(),
                         "cust_ShirtSize": oCells[1].getValue(),
-                        "cust_ShirtColor": oCells[2].getValue(),
+                        "cust_ShirtColor": oCells[2].getValue(), 
                     };
                     this._onEdit(updatedData);
                 }
@@ -75,7 +75,7 @@ sap.ui.define([
             var self = this;
             var valorid = this.externalCodeIdGlobal;
 
-            var path = "/srv/destinationupdate?destinationX=CfDemo&path=cust_CompanyShirts_S0024298592(externalCode='" + valorid + "')";
+            var path = "/srv/destinationupdate?destinationX=sfodataapi&path=/odata/v2/cust_CompanyShirts_S0024298592(externalCode='" + valorid + "')";
             console.log(JSON.stringify(updatedData));
             $.ajax({
                 url: path,

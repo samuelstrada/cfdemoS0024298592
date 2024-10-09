@@ -20,6 +20,9 @@
 					<Column>
 						<Text text="ShirtColor" />
 					</Column>
+					<Column>
+						<Text text="Employee" />
+					</Column>
 				</columns>
 
 				<items>
@@ -30,6 +33,7 @@
 							<Text text="{odata>cust_ShirtColor}" /> -->
 							<Input value="{odata>cust_ShirtSize}" />
                 			<Input value="{odata>cust_ShirtColor}" />
+							<Input value="{odata>cust_Employee}" />
 						</cells>
 					</ColumnListItem>
 				</items>

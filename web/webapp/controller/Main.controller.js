@@ -16,7 +16,7 @@ function (Controller, MessageToast, JSONModel) {
 
         onCallSRV: function(){
             var self = this;
-            var path = "/srv/destination?destinationX=CfDemo&path=cust_CompanyShirts_S0024298592?$format=json";
+            var path = "/srv/destination?destinationX=sfodatatech&path=/odata/v2/cust_CompanyShirts_S0024298592?$format=json";
             
             $.ajax({
                 url: path,

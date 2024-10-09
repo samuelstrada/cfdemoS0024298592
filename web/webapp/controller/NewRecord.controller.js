@@ -15,6 +15,7 @@ function (Controller, MessageToast) {
             var self = this;
             var ShirtSize = this.byId("inputSize").getValue();
             var ShirtColor = this.byId("inputcolor").getValue();
+            var Employee = this.byId("inputemployee").getValue();
             
             // Validación simple
             if (!ShirtSize || !ShirtColor) {
@@ -23,13 +24,13 @@ function (Controller, MessageToast) {
             }
 
             var DatosParaUrl = {
-                "cust_Employee":"104016",
+                "cust_Employee":Employee,
                 "cust_ShirtSize": ShirtSize,
                 "cust_ShirtColor": ShirtColor,
             };
 
         
-            var path = "/srv/destinationadd?destinationX=CfDemo&path=cust_CompanyShirts_S0024298592";
+            var path = "/srv/destinationadd?destinationX=sfodataapi&path=/odata/v2/cust_CompanyShirts_S0024298592";
             
             $.ajax({
                 url: path,
